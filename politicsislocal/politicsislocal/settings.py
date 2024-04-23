@@ -43,7 +43,7 @@ CSRF_TRUSTED_ORIGINS = env.list('DJANGO_CSRF_TRUSTED_ORIGINS', default=[])
 
 INSTALLED_APPS = [
     # Auth app above to avoid Django conflicts
-    'auth_app',
+    'auth_app', # authorization leveraging builtin and custom Django views and magic
     
     'django.contrib.admin',
     'django.contrib.auth',
@@ -56,7 +56,8 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     
     # Local apps
-    'website',
+    'website', # main website style and base.
+    'donors', # donor app for tracking donors and contributions.
 ]
 
 # Add the crispy_forms settings to the settings.py file

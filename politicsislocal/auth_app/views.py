@@ -37,9 +37,6 @@ def login_view(request):
         form = LoginForm()
 
     extra_context = {
-        'title': 'Hamco IS',
-        'company': 'Hamco Internet Solutions',
-        'heading': 'Come in. It is cozy in here.',
         
         'form': form,
     }

@@ -26,4 +26,7 @@ urlpatterns = [
     # Include the auth_app urls
     path("auth/", include("auth_app.urls")),
     
+    # Include the donors urls
+    path("donors/", include("donors.urls")),
+    
 ]
