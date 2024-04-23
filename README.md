@@ -1,4 +1,4 @@
-## Home of [Politics Is Local]{https://politicsislocal.org) (NOT RUNNING YET)
+## Home of [Politics Is Local](https://politicsislocal.org) (NOT RUNNING YET)
 
 Having run for a local office in Minnesota (school board) one challenge was fundraising. Most donors at this level are friends and family. 
 Identifying ways to inspire voters to potentially contribute is difficult given the office is low profile and you have limited history and 
