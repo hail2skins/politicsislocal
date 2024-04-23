@@ -42,6 +42,9 @@ CSRF_TRUSTED_ORIGINS = env.list('DJANGO_CSRF_TRUSTED_ORIGINS', default=[])
 # Application definition
 
 INSTALLED_APPS = [
+    # Auth app above to avoid Django conflicts
+    'auth_app',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -168,10 +171,10 @@ if not DEBUG:
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# # Override the default login redirect
-# LOGIN_REDIRECT_URL = '/'
-# # Override the default logout redirect
-# LOGOUT_REDIRECT_URL = '/auth/login'
+# Override the default login redirect
+LOGIN_REDIRECT_URL = '/'
+# Override the default logout redirect
+LOGOUT_REDIRECT_URL = '/auth/login'
 
 # Mailjet settings/secrets
 MAILJET_API_KEY = env('MAILJET_API_KEY')

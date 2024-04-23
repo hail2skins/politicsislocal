@@ -23,4 +23,7 @@ urlpatterns = [
     # Include the website app urls
     path("", include("website.urls")),
     
+    # Include the auth_app urls
+    path("auth/", include("auth_app.urls")),
+    
 ]
