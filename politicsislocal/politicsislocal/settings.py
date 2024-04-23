@@ -51,6 +51,9 @@ INSTALLED_APPS = [
     # Third party apps
     'crispy_forms',
     'crispy_bootstrap5',
+    
+    # Local apps
+    'website',
 ]
 
 # Add the crispy_forms settings to the settings.py file
