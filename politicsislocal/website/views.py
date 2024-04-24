@@ -23,3 +23,11 @@ def home(request):
     }
     
     return render(request, "website/index.html", context)
+
+# Define the about view
+def about(request):
+    return render(request, "website/about.html")
+
+# Define the FAQ view
+def faq(request):
+    return render(request, "website/faq.html")

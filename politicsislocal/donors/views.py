@@ -5,6 +5,9 @@ from django.db.models.functions import ExtractYear
 import csv
 from django.http import HttpResponse
 
+# import utility functions to randomize return.
+from .utility.utils import randomize_letters_and_numbers
+
 # import the login_required decorator
 from django.contrib.auth.decorators import login_required
 
@@ -14,7 +17,7 @@ from .models import Donor, Contribution
 # Create your views here.
 
 # Donor List View
-@login_required(login_url='login')
+#@login_required(login_url='login')
 def donor_list(request):
     """
     Donor List View
@@ -53,7 +56,7 @@ def donor_list(request):
     if search_query:
         # Allow searching by zip code
         zip_codes = search_query.replace(' ', '').split(',')
-        donor_queryset = Donor.objects.filter(
+        donor_queryset = donor_queryset.filter(
             Q(first_name__icontains=search_query) | 
             Q(last_name__icontains=search_query) | 
             Q(zip_code__in=zip_codes)
@@ -88,13 +91,45 @@ def donor_list(request):
         writer = csv.writer(response)
         writer.writerow(['First Name', 'Last Name', 'Street Number', 'Street Name', 'City', 'State', 'Zip Code', 'Total Contributions'])
         for donor in donor_queryset:
-            writer.writerow([donor.first_name, donor.last_name, donor.street_number, donor.street_name, donor.city, donor.state, donor.zip_code, donor.total_contributions or 0.00])
+            # Apply randomization for unauthenticated users
+            if not request.user.is_authenticated:
+                last_name = randomize_letters_and_numbers(donor.last_name)
+                street_number = randomize_letters_and_numbers(donor.street_number)
+                street_name = randomize_letters_and_numbers(donor.street_name)
+                city = randomize_letters_and_numbers(donor.city)
+            else:
+                last_name = donor.last_name
+                street_number = donor.street_number
+                street_name = donor.street_name
+                city = donor.city
+            
+            writer.writerow([
+                donor.first_name, 
+                last_name, 
+                street_number, 
+                street_name, 
+                city, 
+                donor.state, 
+                donor.zip_code, 
+                donor.total_contributions or 0.00
+            ])
         return response
 
     # Pagination the queryset
     paginator = Paginator(donor_queryset, 25)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
+    
+    # Randomize the donor information if the user is not authenticated
+    # This is applied even though we have a blur effect to prevent scraping
+    if not request.user.is_authenticated:
+        #print("User is not authenticated")
+        for donor in page_obj:
+            donor.last_name = randomize_letters_and_numbers(donor.last_name)
+            donor.street_number = randomize_letters_and_numbers(donor.street_number)
+            donor.street_name = randomize_letters_and_numbers(donor.street_name)
+            donor.city = randomize_letters_and_numbers(donor.city)
+    
     
     # add context dictionary to pass to the template
     context = {

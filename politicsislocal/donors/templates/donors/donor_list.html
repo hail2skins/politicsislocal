@@ -27,36 +27,69 @@
     
     </form>
 
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">First Name</th>
-                    <th scope="col">Last Name</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Total Contributions</th>
-                    <th scope="col">Most Recent</th>
-                    <th scope="col">Candidate</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for donor in page_obj %}
-                <tr>
-                    <td>{{ donor.first_name }}</td>
-                    <td>{{ donor.last_name }}</td>
-                    <td>{{ donor.full_address }}</td>
-                    <td>${{ donor.total_contributions|default:"0.00" }}</td>
-                    <td>{{ donor.most_recent_donation_year }}</td>
-                    <td>{{ donor.recent_entity_last_name }}</td>
-                </tr>
-                {% empty %}
-                <tr>
-                    <td colspan="4" class="text-center">No donors found.</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+    {% if user.is_authenticated %}
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Total Contributions</th>
+                        <th scope="col">Most Recent</th>
+                        <th scope="col">Candidate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for donor in page_obj %}
+                    <tr>
+                        <td>{{ donor.first_name }}</td>
+                        <td>{{ donor.last_name }}</td>
+                        <td>{{ donor.full_address }}</td>
+                        <td>${{ donor.total_contributions|default:"0.00" }}</td>
+                        <td>{{ donor.most_recent_donation_year }}</td>
+                        <td>{{ donor.recent_entity_last_name }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4" class="text-center">No donors found.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Total Contributions</th>
+                        <th scope="col">Most Recent</th>
+                        <th scope="col">Candidate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for donor in page_obj %}
+                    <tr>
+                        <td>{{ donor.first_name }}</td>
+                        <td class="blur-content">{{ donor.last_name }}</td>
+                        <td class="blur-content">{{ donor.full_address }}</td>
+                        <td>${{ donor.total_contributions|default:"0.00" }}</td>
+                        <td>{{ donor.most_recent_donation_year }}</td>
+                        <td>{{ donor.recent_entity_last_name }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4" class="text-center">No donors found.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
 
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">

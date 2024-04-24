@@ -92,6 +92,12 @@
     }
 }
 
+.blur-content {
+    filter: blur(5px);
+    user-select: none;
+    pointer-events: none;
+}
+
 body {
     margin: 0;
     font-family: var(--bs-body-font-family);
