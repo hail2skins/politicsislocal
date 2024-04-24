@@ -14,4 +14,7 @@ urlpatterns = [
     # Path to the FAQ view
     path("faq", views.faq, name="faq"),
     
+    # Path to pricing view
+    path("pricing", views.pricing, name="pricing"),
+    
 ]

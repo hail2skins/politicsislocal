@@ -31,3 +31,7 @@ def about(request):
 # Define the FAQ view
 def faq(request):
     return render(request, "website/faq.html")
+
+# Define the pricing view
+def pricing(request):
+    return render(request, "website/pricing.html")

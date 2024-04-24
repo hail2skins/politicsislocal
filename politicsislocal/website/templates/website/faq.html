@@ -12,80 +12,127 @@
                     <div class="row gx-5">
                         <div class="col-xl-8">
                             <!-- FAQ Accordion 1-->
-                            <h2 class="fw-bolder mb-3">Account &amp; Billing</h2>
+                            <h2 class="fw-bolder mb-3">What data do you have?</h2>
                             <div class="accordion mb-5" id="accordionExample">
                                 <div class="accordion-item">
-                                    <h3 class="accordion-header" id="headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Accordion Item #1</button></h3>
+                                    <h3 class="accordion-header" id="headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">What have we collected?</button></h3>
                                     <div class="accordion-collapse collapse show" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
-                                            <strong>This is the first item's accordion body.</strong>
-                                            It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-                                            <code>.accordion-body</code>
-                                            , though the transition does limit overflow.
+                                            <strong>All data collected is publically available.</strong>
+                                            Our site is quite new. Presently we are gathering data only in the state of Minnesota, where we live and are based.
+                                            A live tracking of the number of donors we have added to our database and the amount those donors has contributed
+                                            is available <a href="{% url 'list' %}">on our Donors List</a> and <a href="{% url '' %}">our Home page.</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
-                                    <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Accordion Item #2</button></h3>
+                                    <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Where is this data?</button></h3>
                                     <div class="accordion-collapse collapse" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
-                                            <strong>This is the second item's accordion body.</strong>
-                                            It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-                                            <code>.accordion-body</code>
-                                            , though the transition does limit overflow.
+                                            <strong>All data is collected through scraping public documents.</strong>
+                                            We identify and download public documents from the internet. We then extract the data from those documents and add it to our database.
+                                            We do not collect any data from private sources. Other sites have similar data, but do not collect the addresses. The purpose if this
+                                            site is to allow local candidates with limited resources the ability to see where people live and to pitch your case to potentially
+                                            like-minded voters.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
-                                    <h3 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Accordion Item #3</button></h3>
+                                    <h3 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">What documents do you have?</button></h3>
                                     <div class="accordion-collapse collapse" id="collapseThree" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
-                                            <strong>This is the third item's accordion body.</strong>
-                                            It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-                                            <code>.accordion-body</code>
-                                            , though the transition does limit overflow.
+                                            <strong>Our current collection is two year-end reports.</strong>
+                                            In 2022 there was a governor's race in Minnesota. We have collected both the year-end report for the winner, Tim Walz, and the
+                                            year-end report for, Scott Jensen.  It is likely we will make these downloadable in the future. We will also update this page as
+                                            we gather more data.
                                         </div>
                                     </div>
                                 </div>
                             </div>
+ 
+                            
                             <!-- FAQ Accordion 2-->
-                            <h2 class="fw-bolder mb-3">Website Issues</h2>
+                            <h2 class="fw-bolder mb-3">How do we use the site?</h2>
                             <div class="accordion mb-5 mb-xl-0" id="accordionExample2">
                                 <div class="accordion-item">
-                                    <h3 class="accordion-header" id="headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2">Accordion Item #1</button></h3>
+                                    <h3 class="accordion-header" id="headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2">It's all about the List</button></h3>
                                     <div class="accordion-collapse collapse show" id="collapseOne2" aria-labelledby="headingOne" data-bs-parent="#accordionExample2">
                                         <div class="accordion-body">
-                                            <strong>This is the first item's accordion body.</strong>
-                                            It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-                                            <code>.accordion-body</code>
-                                            , though the transition does limit overflow.
+                                            <strong>Our Donor List is the core of this site.</strong>
+                                            There are links to the <a href="{% url 'list' %}">Donor List</a> on the Home page and in the navigation bar. The Donor List is a list
+                                            of donors, their addresses and their contributions. The list is searchable by party affiliation or by zip code or multiple zip codes. If you
+                                            represent three zip codes and typically support candidates on the left or right of the political spectrum, you can generate a list of donors
+                                            residing in your district. You can then use this list to solicit donations or to target your message to these donors.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
-                                    <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">Accordion Item #2</button></h3>
+                                    <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">I can't see anything.</button></h3>
                                     <div class="accordion-collapse collapse" id="collapseTwo2" aria-labelledby="headingTwo" data-bs-parent="#accordionExample2">
                                         <div class="accordion-body">
-                                            <strong>This is the second item's accordion body.</strong>
-                                            It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-                                            <code>.accordion-body</code>
-                                            , though the transition does limit overflow.
+                                            <strong>The data is protected, but it is there.</strong>
+                                            You can visit our site and check the <a href="{% url 'list' %}">Donor List</a> to see the data we have collected. Feel free to sort the data and
+                                            it will return a count and list of donors and the amount they contributed in the past. But you will not be able to see some of this data as we've blurred 
+                                            and randomized it both to protect the privacy of the donors, and because will be selling this data to candidates and political parties. 
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
-                                    <h3 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree2" aria-expanded="false" aria-controls="collapseThree2">Accordion Item #3</button></h3>
+                                    <h3 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree2" aria-expanded="false" aria-controls="collapseThree2">Selling? How much?</button></h3>
                                     <div class="accordion-collapse collapse" id="collapseThree2" aria-labelledby="headingThree" data-bs-parent="#accordionExample2">
                                         <div class="accordion-body">
-                                            <strong>This is the third item's accordion body.</strong>
-                                            It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-                                            <code>.accordion-body</code>
-                                            , though the transition does limit overflow.
+                                            <strong>While not set in stone, we have an idea.</strong>
+                                            We are still working on the pricing, but we are thinking of selling the data in two ways. The first is a one-time purchase of the data you are interested in. 
+                                            You sort the data how you want, get the list how you wish it to be, and we'll sell it to you for a one-time fee, currently set at $1 per donor in the report. 
+                                            The second is a lifetime membership. You pay a one-time fee of $250 and you get access to all existing and future data to download as you wish.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br>
+                        
+                            <!-- FAQ Accordion 3-->
+                            <h2 class="fw-bolder mb-3">Disclaimers</h2>
+                            <div class="accordion mb-5 mb-xl-0" id="accordionExample3">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2">The data may be dated</button></h3>
+                                    <div class="accordion-collapse collapse show" id="collapseOne2" aria-labelledby="headingOne" data-bs-parent="#accordionExample3">
+                                        <div class="accordion-body">
+                                            <strong>All data comes from public documents.</strong>
+                                            Though a donor may have contributed to a candidate in the past, they may no longer be at the address we have collected. We will update our data with public
+                                            information, but there's no guarantee that data is current to the moment you are ready to knock on their door. 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">There are mistakes in the data</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseTwo2" aria-labelledby="headingTwo" data-bs-parent="#accordionExample3">
+                                        <div class="accordion-body">
+                                            <strong>Though we made efforts, our scripts may not have it all perfect.</strong>
+                                            Data from these public PDFs is very difficult to extract. Especially the address data. Some contacts may have address data that is formatted weirdly, or 
+                                            have a comma in the wrong spot. We will be making ongoing efforts to tighten this and find addresses for those that we know are missing, but there may be
+                                            gaps. We will be refining our extraction as we add documents, and going back to refine previous extractions as well.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree2" aria-expanded="false" aria-controls="collapseThree2">Not our full time positions</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseThree2" aria-labelledby="headingThree" data-bs-parent="#accordionExample3">
+                                        <div class="accordion-body">
+                                            <strong>We work full time in other positions for a living.</strong>
+                                            This site will be actively maintained and we are reachable to answer questions for people who are curious or who need support with a purchase.
+                                            Please understand our schedules may not allow us to respond immediately, but we will respond as soon as we can. We will respond to all contacts, but 
+                                            it could take up to 72 hours during normal business periods, or longer, should the people working on the site be on vacation. Do not hesitate to reach out
+                                            but please be patient.
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+
+
+                        
                         <div class="col-xl-4">
                             <div class="card border-0 bg-light mt-xl-5">
                                 <div class="card-body p-4 py-lg-5">
@@ -95,13 +142,9 @@
                                             <p class="text-muted mb-4">
                                                 Contact us at
                                                 <br />
-                                                <a href="#!">support@domain.com</a>
+                                                <a href="mailto:support@hamcois.com">support@hamcois.com</a>
                                             </p>
-                                            <div class="h6 fw-bolder">Follow us</div>
-                                            <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-twitter"></i></a>
-                                            <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-facebook"></i></a>
-                                            <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-linkedin"></i></a>
-                                            <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-youtube"></i></a>
+                                            
                                         </div>
                                     </div>
                                 </div>
