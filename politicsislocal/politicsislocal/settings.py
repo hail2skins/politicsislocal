@@ -160,7 +160,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # Set staticfile dirs here
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    BASE_DIR / 'static',
 ]
 
 # Code added for production deployment
