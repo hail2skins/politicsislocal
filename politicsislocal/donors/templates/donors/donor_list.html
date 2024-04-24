@@ -1,5 +1,7 @@
 {% extends 'website/base.html' %}
 
+{% load humanize %}
+
 {% block content %}
 <div class="container mt-4">
     <h2 class="text-center mb-4">Donor List</h2>
@@ -7,7 +9,7 @@
     <!-- Displaying totals -->
     <div class="alert alert-info">
         Donors identified: {{ total_donors }}<br>
-        Total Contributed: ${{ total_contributed|floatformat:2 }}
+        Total Contributed: ${{ total_contributed|intcomma }}
     </div>
     
     <form method="get" action="">
