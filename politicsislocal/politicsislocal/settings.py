@@ -51,9 +51,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # Django added for app
+    'django.contrib.humanize', # humanize for number formatting
+    
     # Third party apps
-    'crispy_forms',
-    'crispy_bootstrap5',
+    'crispy_forms', # crispy forms for bootstrap5
+    'crispy_bootstrap5', # crispy forms for bootstrap5
+    
     
     # Local apps
     'website', # main website style and base.

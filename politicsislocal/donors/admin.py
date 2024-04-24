@@ -4,9 +4,18 @@ from django.contrib import admin
 from .models import Donor, Contribution, Entity
 
 # Register your models here.
-# This is the simplest way to register a model with the admin site
-admin.site.register(Donor)
-admin.site.register(Contribution)
+# Donors needs to show id, name, address and needs_review
+# and we need to search by name and address and needs review
+@admin.register(Donor)
+class DonorAdmin(admin.ModelAdmin):
+    list_display = ('id', 'last_name', 'first_name', 'full_address', 'needs_review')
+    search_fields = ('last_name', 'first_name', 'full_address')
+
+
+
+
+
+admin.site.register(Contribution) # simple registration
 
 # Register the Entity model but with some additional configuration allowing for filtering
 # and searching by the entity_name field and classification.
