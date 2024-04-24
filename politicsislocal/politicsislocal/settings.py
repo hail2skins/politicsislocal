@@ -159,9 +159,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # Set staticfile dirs here
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",
+# ]
 
 # Code added for production deployment
 # This production code might break development mode, so we check whether we're in DEBUG mode
