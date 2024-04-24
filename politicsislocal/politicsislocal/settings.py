@@ -14,8 +14,10 @@ import os
 
 #import environ for environment variables
 import environ
+
 # initialize .env file
 env = environ.Env()
+
 # reading .env file
 environ.Env.read_env()
 
