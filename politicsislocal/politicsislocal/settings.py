@@ -193,4 +193,24 @@ EMAIL_BACKEND = 'auth_app.mail_backend.MailjetEmailBackend'
 DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
 DEFAULT_FROM_NAME = env('DEFAULT_FROM_NAME')
 
-
+# Logging configuration
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': 'django_errors.log',
+            'maxBytes': 1024*1024*5,  # 5 MB
+            'backupCount': 5,
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
