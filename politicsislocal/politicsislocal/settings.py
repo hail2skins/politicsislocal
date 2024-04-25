@@ -60,8 +60,8 @@ INSTALLED_APPS = [
     # Third party apps
     'crispy_forms', # crispy forms for bootstrap5
     'crispy_bootstrap5', # crispy forms for bootstrap5
-    
-    
+    'scout_apm.django', # Scout APM for performance monitoring
+        
     # Local apps
     'website', # main website style and base.
     'donors', # donor app for tracking donors and contributions.
@@ -70,6 +70,11 @@ INSTALLED_APPS = [
 # Add the crispy_forms settings to the settings.py file
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+# Scout APM settings
+SCOUT_MONITOR = env.bool('SCOUT_MONITOR', default=False)
+SCOUT_KEY =env('SCOUT_KEY')
+SCOUT_NAME = env('SCOUT_NAME')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
