@@ -12,7 +12,7 @@ from .utility.utils import randomize_letters_and_numbers
 from django.contrib.auth.decorators import login_required
 
 # Import your models
-from .models import Donor, Contribution
+from .models import Donor, Contribution, Entity
 
 # Logging import
 import logging
@@ -149,3 +149,42 @@ def donor_list(request):
     }
     
     return render(request, 'donors/donor_list.html', context)
+
+# Create a view for donor_sources 
+def donor_sources(request):
+    """
+    Donor Sources View
+
+    This view will display a list of all entities in the database and the total donors and contributions
+    associated with each entity. We will also implement pagination to display the entities in pages.
+    """
+    # Get all entities
+    entities = Entity.objects.all()
+
+    # Create a list to hold the data for each entity
+    donor_sources_data = []
+
+    # For each entity, calculate the total number of donors and the total amount of contributions
+    for entity in entities:
+        contributions = Contribution.objects.filter(entity=entity)
+        total_donors = contributions.values('donor').distinct().count()
+        total_amount = contributions.aggregate(Sum('amount'))['amount__sum']
+        
+        # Create candidate_name from first_name and last_name
+        candidate_name = f"{entity.first_name} {entity.last_name}" if entity.is_candidate else None
+
+        # Add the data for this entity to the list
+        donor_sources_data.append({
+            'entity': entity,
+            'total_donors': total_donors,
+            'total_amount': total_amount,
+            'candidate_name': candidate_name
+        })
+        
+    # Create a context dictionary to pass to the template
+    context = {
+        'donor_sources_data': donor_sources_data,
+    }
+
+    # Render the template with the donor_sources_data
+    return render(request, 'donors/donor_sources.html', context)

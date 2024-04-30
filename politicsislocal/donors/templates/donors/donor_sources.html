@@ -1,0 +1,36 @@
+{% extends 'website/base.html' %}
+
+{% load humanize %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Donor Sources</h2>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Candidate Name</th>                    
+                    <th scope="col">Entity Name</th>
+                    <th scope="col">Total Donors</th>
+                    <th scope="col">Total Contributions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in donor_sources_data %}
+                <tr>
+                    <td>{{ data.candidate_name }}</td>
+                    <td>{{ data.entity.entity_name }}</td>
+                    <td>{{ data.total_donors }}</td>
+                    <td>${{ data.total_amount|default:"0.00"|intcomma }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3" class="text-center">No data found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
