@@ -12,6 +12,8 @@
                 <tr>
                     <th scope="col">Candidate Name</th>                    
                     <th scope="col">Organization Name</th>
+                    <th scope="col">Office</th>
+                    <th scope="col">Year</th>
                     <th scope="col">Total Donors</th>
                     <th scope="col">Total Contributions</th>
                 </tr>
@@ -21,6 +23,8 @@
                 <tr>
                     <td>{{ data.candidate_name }}</td>
                     <td>{{ data.entity.entity_name }}</td>
+                    <td>{{ data.entity.office }}</td>
+                    <td>{{ data.entity.year }}</td>
                     <td>{{ data.total_donors }}</td>
                     <td>${{ data.total_amount|default:"0.00"|intcomma }}</td>
                 </tr>
